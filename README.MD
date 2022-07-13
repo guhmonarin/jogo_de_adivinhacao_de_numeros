@@ -17,3 +17,7 @@
 
 ## Linguagens, Técnicas e Tecnologias utilizadas :books:
 - [``Python``](https://www.python.org)
+
+## Observação
+
+-Baixar a pasta executável completa para funcionar corretamente.
