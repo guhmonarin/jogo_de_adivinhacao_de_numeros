@@ -10,10 +10,10 @@
 ## Funcionalidades
 
 :heavy_check_mark: - Quando executa o programa, é pedido dois números inteiros e reais, onde o primeiro número é menor que o segundo.<br>
-:heavy_check_mark: - O computador então escolhe um número aleatório desse intervalo e armazena.<br>
+:heavy_check_mark: -Quando clica em iniciar o jogo, o computador então escolhe um número aleatório desse intervalo e armazena.<br>
 :heavy_check_mark: - O usuário então precisa acertar este número, onde o computador informa se ele acertou, se é maior ou menor.<br>
 :heavy_check_mark: - Quando o usuário finalmente acerta o número, o computador informa quantas tentivas ele precisou para acertar o número.<br>
-:heavy_check_mark: - Então é perguntado se deseja jogar novamente ou se for informado que não, o sistema é finalizado.
+:heavy_check_mark: - Quando clica em jogar novamente, o computador inicia o jogo novamente.
 
 ## Linguagens, Técnicas e Tecnologias utilizadas :books:
 - [``Python``](https://www.python.org)
