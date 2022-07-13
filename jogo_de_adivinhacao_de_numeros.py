@@ -1,43 +1,51 @@
+from PySimpleGUI import PySimpleGUI as sg
 from random import randint
 
-def digitar_numero():
-    a = int(input('Digite o primeiro numero do intervalo: '))
-    b = int(input('Digite o segundo numero do intervalo: '))
-    return a, b
+#Função do resultado
+def iniciar_jogo():
+    if adivinhe == numero:
+        resposta = (f'PARABÉNS - VOCÊ ACERTOU O NÚMERO {adivinhe} com {tentativa} tentativas!')
+        
+    elif adivinhe > numero:
+        resposta = (f'Você errou, o número é MENOR que {adivinhe}')
+        
+    elif adivinhe < numero:
+        resposta = (f'Você errou, o número é MAIOR que {adivinhe}')
+        
+    return resposta
 
-print('-'*80)
-print('JOGO DE ADIVINHAÇÃO DE NÚMEROS')
-print('-'*80)
 
+tentativa = 1
+
+#layout
+sg.theme('dark')
+layout = [
+    [sg.Text('ADIVINHE O NÚMERO')],
+    [sg.Text('Escolha o intervalo de números'), sg.Input(key= 'primeiro'), sg.Text('até'), sg.Input(key='segundo')],
+    [sg.Button('Iniciar o jogo')],
+    [sg.Text('Adivinhe um número'), sg.Input(key='aleatorio')],
+    [sg.Button('Jogar')],
+    [sg.Text('', key='resultado')]
+]
+
+#janela
+janela = sg.Window('Jogo de adivinhação de números', layout)
+
+#Eventos
 while True:
-  tentativa = 1
-  a,b = digitar_numero()
-  
-  while a > b or a < 0 or b < 0:
-    print('\nValor digitado inválido, digite novamente!')
-    a,b = digitar_numero()
-    
-  else:
-    numero = randint(a,b)
-    print('-'*80)
-    print('BORA PARA O JOGO')
-    while True:
-      adivinhe = int(input('\nADIVINHE UM NÚMERO: '))
-      if adivinhe == numero:
-        print(f'\nPARABÉNS - VOCÊ ACERTOU O NÚMERO {adivinhe} com {tentativa} tentativas!')
-        break;
-      elif adivinhe > numero:
-        print(f'Você errou, o número é MENOR que {adivinhe}')
+    evento, valores = janela.read()
+    if evento == sg.WIN_CLOSED:
+        break
+    if evento == 'Iniciar o jogo':
+        primeiro = int(valores['primeiro'])
+        segundo = int(valores['segundo'])
+        numero = randint(primeiro,segundo)
+        
+    if evento == 'Jogar':
+        adivinhe = int(valores['aleatorio'])
+        resposta = iniciar_jogo()
         tentativa += 1
-      elif adivinhe < numero:
-        print(f'Você errou, o número é MAIOR que {adivinhe}')
-        tentativa += 1
+        janela['resultado'].update(resposta)
 
-  continuar = input('\nDeseja jogar novamente? (s/n): ').lower()
-
-  if continuar == 'n':
-    break;
-
-print('-'*80)
-print('FIM DO JOGO')
-print('-'*80) 
+#fechamento da janela
+janela.close()
