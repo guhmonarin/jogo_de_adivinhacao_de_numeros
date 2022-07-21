@@ -1,5 +1,5 @@
 <h1 align="center"> Jogo de Adivinhação de Números </h1>
-<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=RED&style=for-the-badge"/></p>
+<p align="center"><img src="http://img.shields.io/static/v1?label=STATUS&message=FINALIZADO&color=RED&style=for-the-badge"/></p>
 
 
 ## Descrição do projeto 
@@ -17,3 +17,7 @@
 
 ## Linguagens, Técnicas e Tecnologias utilizadas :books:
 - [``Python``](https://www.python.org)
+
+## Observação
+
+-Baixar a pasta executável completa para funcionar corretamente.
