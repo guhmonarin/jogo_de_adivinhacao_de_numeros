@@ -39,7 +39,7 @@ layout_direita=[
     [sg.Button('JOGAR NOVAMENTE', font=('helvetica',20),visible=False, key='jogar_novamente')]
 ]
 
-sg.theme('Topanga')
+
 layout = [[sg.Column(layout_esquerda),sg.VSeparator(),sg.Column(layout_direita, element_justification="center")]]
 
 #janela
