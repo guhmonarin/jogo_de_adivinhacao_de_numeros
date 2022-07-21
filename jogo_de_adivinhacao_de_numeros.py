@@ -39,7 +39,7 @@ layout_direita=[
     [sg.Button('JOGAR NOVAMENTE', font=('helvetica',20),visible=False, key='jogar_novamente')]
 ]
 
-sg.theme('darkpurple')
+sg.theme('Topanga')
 layout = [[sg.Column(layout_esquerda),sg.VSeparator(),sg.Column(layout_direita, element_justification="center")]]
 
 #janela
@@ -77,18 +77,7 @@ while True:
         adivinhe = 0
         numero = ''
     except:
-      if valores['primeiro'] == '' and valores['segundo'] == '':
-        sg.Popup('VOCÊ NÃO DIGITOU NENHUM NÚMERO NO CAMPO', font=('helvetica', 15))
-        esconder_campos()
-      if valores['primeiro'] == '':
-        sg.Popup('VOCÊ DIGITOU APENAS UM NÚMERO', font=('helvetica', 15))
-        esconder_campos()
-      if valores['segundo'] == '':
-        sg.Popup('VOCÊ DIGITOU APENAS UM NÚMERO', font=('helvetica', 15))
-        esconder_campos()
-      if primeiro > segundo:
-        sg.Popup('O PRIMEIRO NÚMERO NÃO PODE SER MAIOR QUE O SEGUNDO', font=('helvetica', 15))
-        esconder_campos()
+      print('Verificar os campos!')
 
 #fechamento da janela
 janela.close()
